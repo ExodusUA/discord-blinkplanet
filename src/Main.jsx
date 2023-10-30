@@ -13,15 +13,17 @@ function Main() {
 
             isPrivate
                 .then((data) => {
-                    setTimeout(() => {
-                        window.open(`https://blink-planet.vercel.app/code=${urlCode}`, '_blank');
+                    const newLink = document.createElement('a');
+                    newLink.href = `https://blink-planet.vercel.app/code=${urlCode}`;
+                    newLink.target = '_blank';
+                    document.body.appendChild(newLink);
+                    newLink.click();
 
-                        if (data.isPrivate === true) {
-                            window.location.replace('http://discord.gg/54G95nUytY');
-                        } else {
-                            window.location.replace('http://discord.gg/blinkplanet');
-                        }
-                    }, 1000);
+                    if (data.isPrivate === true) {
+                        window.location.replace('http://discord.gg/54G95nUytY');
+                    } else {
+                        window.location.replace('http://discord.gg/blinkplanet');
+                    }
                 })
                 .catch((err) => {
                     console.log(err);
