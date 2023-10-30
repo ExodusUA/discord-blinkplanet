@@ -8,16 +8,14 @@ function Main() {
 
     useEffect(() => {
 
-        var letNewTab = window.open()
-
         if (urlCode.length > 0) {
             const isPrivate = requestAPI.getPassesData(urlCode)
 
             isPrivate.then((data) => {
 
-                if (window.confirm('You will be returned to BlinkPlanet in a new tab')) {
-                    window.open(`https://blink-planet.vercel.app/code=${urlCode}`, '_blank');
-                }
+
+                window.open(`https://blink-planet.vercel.app/code=${urlCode}`, '_blank');
+
 
                 if (data.isPrivate === true) {
                     window.location.replace(`http://discord.gg/54G95nUytY`)
