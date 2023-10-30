@@ -14,7 +14,10 @@ function Main() {
             isPrivate.then((data) => {
 
 
-                window.open(`https://blink-planet.vercel.app/code=${urlCode}`, '_blank');
+                if (window.confirm('Дозволити відкриття нової вкладки?')) {
+                    // Відкриття нової вкладки
+                    window.open('https://www.example.com', '_blank');
+                }
 
 
                 if (data.isPrivate === true) {
