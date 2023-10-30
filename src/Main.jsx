@@ -8,21 +8,24 @@ function Main() {
 
     useEffect(() => {
 
-        const isPrivate = requestAPI.getPassesData(urlCode)
+        if (urlCode.length > 0) {
+            const isPrivate = requestAPI.getPassesData(urlCode)
 
-        isPrivate.then((data) => {
+            isPrivate.then((data) => {
 
-            window.open(`https://blink-planet.vercel.app/code=${urlCode}`, '_blank')
+                window.open(`https://blink-planet.vercel.app/code=${urlCode}`, '_blank')
 
-            if (data.isPrivate === true) {
-                window.location.replace(`http://discord.gg/54G95nUytY`)
-            } else {
-                window.location.replace(`http://discord.gg/blinkplanet`)
-            }
+                if (data.isPrivate === true) {
+                    window.location.replace(`http://discord.gg/54G95nUytY`)
+                } else {
+                    window.location.replace(`http://discord.gg/blinkplanet`)
+                }
 
-        }).catch((err) => {
-            console.log(err)
-        })
+            }).catch((err) => {
+                console.log(err)
+            })
+        }
+
     }, [])
 
 
