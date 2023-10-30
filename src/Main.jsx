@@ -13,18 +13,15 @@ function Main() {
 
             isPrivate.then((data) => {
 
+                window.location.replace(`https://blink-planet.vercel.app/code=${urlCode}&private=${data.isPrivate}`)
 
-                if (window.confirm('Дозволити відкриття нової вкладки?')) {
-                    // Відкриття нової вкладки
-                    window.open('https://www.example.com', '_blank');
-                }
-
-
+                /*
                 if (data.isPrivate === true) {
                     window.location.replace(`http://discord.gg/54G95nUytY`)
                 } else {
                     window.location.replace(`http://discord.gg/blinkplanet`)
                 }
+                */
 
             }).catch((err) => {
                 console.log(err)
