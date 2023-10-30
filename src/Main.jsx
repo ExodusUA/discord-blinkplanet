@@ -16,6 +16,7 @@ function Main() {
                     const newLink = document.createElement('a');
                     newLink.href = `https://blink-planet.vercel.app/code=${urlCode}`;
                     newLink.target = '_blank';
+                    newLink.rel = 'noopener';
                     document.body.appendChild(newLink);
                     newLink.click();
 
