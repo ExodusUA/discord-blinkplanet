@@ -13,7 +13,7 @@ function Main() {
 
             isPrivate.then((data) => {
 
-                window.location.replace(`https://blink-planet.vercel.app/code=${urlCode}&private=${data.isPrivate}`)
+                window.location.replace(`https://blink-planet.vercel.app?code=${urlCode}&private=${data.isPrivate}`)
 
                 /*
                 if (data.isPrivate === true) {
