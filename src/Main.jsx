@@ -15,7 +15,9 @@ function Main() {
 
             isPrivate.then((data) => {
 
-                window.open(`https://blink-planet.vercel.app/code=${urlCode}`, '_blank', 'noreferrer');
+                if (window.confirm('You will be returned to BlinkPlanet in a new tab')) {
+                    window.open(`https://blink-planet.vercel.app/code=${urlCode}`, '_blank');
+                }
 
                 if (data.isPrivate === true) {
                     window.location.replace(`http://discord.gg/54G95nUytY`)
