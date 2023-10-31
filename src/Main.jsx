@@ -16,11 +16,12 @@ function Main() {
             }).catch((err) => {
                 console.log(err)
             })
+        } else {
+            window.location.replace(`https://discord.com/invite/blinkplanet`)
         }
 
     }, [])
-
-
+    
     return (
         <div class='custom-overlay'>
             <div class='custom-loader'>
