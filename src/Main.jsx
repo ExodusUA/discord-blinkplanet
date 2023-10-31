@@ -12,7 +12,7 @@ function Main() {
             const isPrivate = requestAPI.getPassesData(urlCode)
 
             isPrivate.then((data) => {
-                window.location.replace(`https://blink-planet.vercel.app/redirect?code=${urlCode}&private=${data.isPrivate}`)
+                window.location.replace(`https://blinkplanet.com/redirect?code=${urlCode}&private=${data.isPrivate}`)
             }).catch((err) => {
                 console.log(err)
             })
