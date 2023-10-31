@@ -12,17 +12,7 @@ function Main() {
             const isPrivate = requestAPI.getPassesData(urlCode)
 
             isPrivate.then((data) => {
-
                 window.location.replace(`https://blink-planet.vercel.app/redirect?code=${urlCode}&private=${data.isPrivate}`)
-
-                /*
-                if (data.isPrivate === true) {
-                    window.location.replace(`http://discord.gg/54G95nUytY`)
-                } else {
-                    window.location.replace(`http://discord.gg/blinkplanet`)
-                }
-                */
-
             }).catch((err) => {
                 console.log(err)
             })
