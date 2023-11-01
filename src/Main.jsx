@@ -12,7 +12,12 @@ function Main() {
             const isPrivate = requestAPI.getPassesData(urlCode)
 
             isPrivate.then((data) => {
-                window.location.replace(`https://blinkplanet.com/redirect?code=${urlCode}&private=${data.isPrivate}`)
+
+                if (data.isPrivate === true) {
+                    window.location.replace(`https://blinkplanet.com/redirect?code=${urlCode}`)
+                } else {
+                    window.location.replace(`https://discord.com/invite/blinkplanet`)
+                }
             }).catch((err) => {
                 console.log(err)
             })
@@ -21,7 +26,7 @@ function Main() {
         }
 
     }, [])
-    
+
     return (
         <div class='custom-overlay'>
             <div class='custom-loader'>
