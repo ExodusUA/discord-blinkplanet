@@ -12,12 +12,12 @@ function Main() {
             const isPrivate = requestAPI.getPassesData(urlCode)
 
             isPrivate.then((data) => {
-                window.location.replace(`https://blink-planet.vercel.app/redirect?code=${urlCode}&private=${data.isPrivate}`)
+                window.location.replace(`https://www.blinkplanet.com/redirect?code=${urlCode}&private=${data.isPrivate}`)
             }).catch((err) => {
-                window.location.replace(`https://blink-planet.vercel.app/redirect?code=${urlCode}&private=false`)
+                window.location.replace(`https://www.blinkplanet.com/redirect?code=${urlCode}&private=false`)
             })
         } else {
-            window.location.replace(`https://blink-planet.vercel.app/redirect?code=${urlCode}&private=false`)
+            window.location.replace(`https://www.blinkplanet.com/redirect?code=${urlCode}&private=false`)
         }
 
     }, [])

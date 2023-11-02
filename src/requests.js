@@ -22,7 +22,7 @@ async function getPassesData(platformUserID) {
         return response.data;
     } catch (error) {
         console.error(error);
-        throw error; // Підкидаємо помилку, щоб її обробити вище в коді
+        throw error;
     }
 }
 
