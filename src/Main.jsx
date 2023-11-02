@@ -12,17 +12,14 @@ function Main() {
             const isPrivate = requestAPI.getPassesData(urlCode)
 
             isPrivate.then((data) => {
-
-                if (data.isPrivate === true) {
-                    window.location.replace(`https://blinkplanet.com/redirect?code=${urlCode}`)
-                } else {
-                    window.location.replace(`https://discord.com/invite/blinkplanet`)
-                }
+console.log(`https://blinkplanet.com/redirect?code=${urlCode}&private=${data.isPrivate}`)
+                //window.location.replace(`https://blinkplanet.com/redirect?code=${urlCode}&private=${data.isPrivate}`)
             }).catch((err) => {
                 console.log(err)
             })
         } else {
-            window.location.replace(`https://discord.com/invite/blinkplanet`)
+console.log(`https://blinkplanet.com/redirect?code=${urlCode}&private=false`)
+            //window.location.replace(`https://blinkplanet.com/redirect?code=${urlCode}&private=false`)
         }
 
     }, [])
